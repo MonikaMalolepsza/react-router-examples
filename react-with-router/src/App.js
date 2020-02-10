@@ -1,40 +1,42 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css'
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-import Page2 from "./pages/Page2";
-import Page1 from "./pages/Page1";
+import Quotes from "./pages/Quotes";
+import Topics from "./pages/Topics";
 import Home from "./pages/Home";
 
 function App() {
   return (
             <Router>
                 <div>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
+                    <nav className="navbar navbar-expand-sm bg-light">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li>
-                            <Link to="/about">About</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/topics">Topics</Link>
                         </li>
-                        <li>
-                            <Link to="/dashboard">Dashboard</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/quotes">Quotes</Link>
                         </li>
                     </ul>
-
+                    </nav>
                     <hr />
                     <Switch>
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/about">
-                            <Page1 />
+                        <Route path="/topics">
+                            <Topics />
                         </Route>
-                        <Route path="/dashboard">
-                            <Page2 />
+                        <Route path="/quotes">
+                            <Quotes />
                         </Route>
                     </Switch>
                 </div>
