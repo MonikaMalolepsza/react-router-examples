@@ -1,37 +1,54 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import Page1 from "./pages/Page1"
-import Page2 from "./pages/Page2"
+import 'bootstrap/dist/css/bootstrap.css'
+import Topics from "./pages/Topics"
+import Quotes from "./pages/Quotes"
 import Home from "./pages/Home"
 
 
 function App() {
 
+    // initialize the state
+
     const [hash, setHash] = useState(window.location.hash);
 
 
     useEffect(() => {
-window.onhashchange = () => {setHash(window.location.hash)}
+
+        // subscribe to onchange event
+
+    window.onhashchange = () => {setHash(window.location.hash)}
+
     }, [])
 
     function router() {
         switch(hash) {
-            case '#/page1' :
-                return  <Page1 />
-            case '#/page2' :
-                return <Page2 />
+            case '#/topics' :
+                return  <Topics />
+            case '#/quotes' :
+                return <Quotes />
             default :
                 return <Home />
         }
     }
 
   return (
-    <div className="App">
-        <div>
-            <a href="#/page1">Page1</a>
-            <a href="#/page2">Page2</a>
-            <a href="">Home</a>
-        </div>
+    <div>
+        <nav className="navbar navbar-expand-sm bg-light">
+
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <a className="nav-link" href="#/">Home</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#/topics">Topics</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#/quotes">Quotes</a>
+                </li>
+            </ul>
+        </nav>
+        <hr />
         {router()}
     </div>
   )

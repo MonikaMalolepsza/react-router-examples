@@ -1,4 +1,5 @@
 # This repository contains:
 
- * minimal example of routing in Vanilla JS
- * simple example of routing using react-router
+ * example of routing in React.js
+ * example of routing using react-router
+ * example of nested route made with react-router

@@ -1,12 +1,22 @@
 import React from 'react'
 
-function About() {
+function Topics() {
     return (
         <div>
-            <h1>Hi there!</h1>
-            <h3>I love React.JS</h3>
+            <h1 className="m-5">Topics</h1>
+            <ul>
+                <li>
+                    <p>Rendering with React</p>
+                </li>
+                <li>
+                    <p>Components</p>
+                </li>
+                <li>
+                    <p>Props v. State</p>
+                </li>
+            </ul>
         </div>
     )
 }
 
-export default About
+export default Topics
